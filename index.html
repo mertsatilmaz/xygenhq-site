@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Xygen — Digital Product Company</title>
+  <meta name="description" content="Xygen builds and ships focused digital products. Flagship: SecPortal — a security operations platform." />
+  <meta name="theme-color" content="#0b0f14" />
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1620;
+      --text:#e8eef6;
+      --muted:#a7b3c2;
+      --line:rgba(255,255,255,.08);
+      --accent:#ff7a1a;
+      --accent2:#7aa8ff;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius:18px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(255,122,26,.14), transparent 55%),
+        radial-gradient(800px 500px at 80% 20%, rgba(122,168,255,.10), transparent 55%),
+        radial-gradient(900px 600px at 50% 100%, rgba(255,255,255,.06), transparent 65%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 60px;}
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:14px 16px;
+      background: rgba(15,22,32,.65);
+      border:1px solid var(--line);
+      border-radius: 999px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      backdrop-filter: blur(10px);
+      position: sticky; top: 14px; z-index: 50;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .brand img{
+      height:28px; width:auto; display:block;
+      filter: drop-shadow(0 10px 16px rgba(0,0,0,.25));
+    }
+    .navlinks{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    .navlinks a{
+      padding:8px 10px;
+      color:var(--muted);
+      border-radius:999px;
+      border:1px solid transparent;
+    }
+    .navlinks a:hover{color:var(--text); border-color:var(--line); background:rgba(255,255,255,.03)}
+
+    .hero{
+      display:grid; grid-template-columns: 1.15fr .85fr;
+      gap:22px; margin-top:34px; align-items:stretch;
+    }
+    @media (max-width: 900px){ .hero{grid-template-columns:1fr} }
+
+    .card{
+      background: rgba(15,22,32,.72);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+      backdrop-filter: blur(10px);
+    }
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(28px, 4vw, 44px);
+      letter-spacing: -0.8px;
+      line-height:1.1;
+    }
+    .lead{
+      margin:0 0 18px;
+      color: var(--muted);
+      font-size: clamp(15px, 1.6vw, 18px);
+    }
+    .pills{display:flex; gap:10px; flex-wrap:wrap; margin: 18px 0 0}
+    .pill{
+      font-size: 12px;
+      color: rgba(232,238,246,.86);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      padding: 7px 10px;
+      border-radius: 999px;
+    }
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top: 18px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding: 11px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      font-weight: 700;
+    }
+    .btn:hover{background: rgba(255,255,255,.06)}
+    .btn.primary{
+      border-color: rgba(255,122,26,.25);
+      background: linear-gradient(135deg, rgba(255,122,26,.22), rgba(255,122,26,.10));
+    }
+    .btn.primary:hover{background: linear-gradient(135deg, rgba(255,122,26,.28), rgba(255,122,26,.14))}
+    .small{
+      font-size:12px; color: var(--muted); margin-top:12px;
+    }
+
+    .secTitle{
+      margin: 0 0 6px;
+      font-size: 14px;
+      color: rgba(232,238,246,.9);
+      letter-spacing:.2px;
+      text-transform: uppercase;
+    }
+    .secHead{
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing:-.2px;
+      line-height:1.2;
+    }
+    .list{margin: 0; padding-left: 18px; color: var(--muted)}
+    .list li{margin: 8px 0}
+
+    .grid{
+      display:grid; grid-template-columns: repeat(3, 1fr);
+      gap:16px; margin-top:18px;
+    }
+    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+
+    .mini h3{margin:0 0 6px; font-size: 16px}
+    .mini p{margin:0; color: var(--muted); font-size: 14px}
+
+    .footer{
+      margin-top: 24px;
+      display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="nav" aria-label="Primary">
+      <div class="brand">
+        <img src="assets/xygen-logo.png" alt="Xygen logo" />
+        <span>Xygen</span>
+      </div>
+      <nav class="navlinks">
+        <a href="#secportal">SecPortal</a>
+        <a href="#what">What we do</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-label="Hero">
+      <div class="card">
+        <h1>We build focused digital products — shipped fast, built to last.</h1>
+        <p class="lead">
+          Xygen is a product company creating software platforms and interactive experiences across industries.
+          Our current flagship is <strong>SecPortal</strong>, built to streamline security operations for modern organizations.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="https://secportal.io" target="_blank" rel="noopener">Visit SecPortal</a>
+          <a class="btn" href="#contact">Request a demo</a>
+        </div>
+
+        <div class="pills" aria-label="Highlights">
+          <span class="pill">Product-led</span>
+          <span class="pill">Security-minded engineering</span>
+          <span class="pill">Clean UX</span>
+          <span class="pill">Scalable architecture</span>
+        </div>
+
+        <p class="small">
+          Note: Xygen is the parent company. SecPortal is the market-facing product right now.
+        </p>
+      </div>
+
+      <aside class="card" id="what">
+        <div class="secTitle">What we do</div>
+        <div class="secHead">Build. Launch. Iterate.</div>
+        <ul class="list">
+          <li><strong>Platforms & apps:</strong> from MVP to production-grade systems</li>
+          <li><strong>Security-first delivery:</strong> pragmatic controls and disciplined engineering</li>
+          <li><strong>Product craft:</strong> clarity, usability, and outcomes that matter</li>
+        </ul>
+
+        <div class="grid" style="margin-top:18px;">
+          <div class="mini">
+            <h3>Strategy</h3>
+            <p>Define ICP, problem, and value proposition that survives scrutiny.</p>
+          </div>
+          <div class="mini">
+            <h3>Engineering</h3>
+            <p>Reliable systems with sensible security and maintainability.</p>
+          </div>
+          <div class="mini">
+            <h3>Growth</h3>
+            <p>Messaging and launch assets that convert attention into pipeline.</p>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="card" id="secportal" style="margin-top:18px;">
+      <div class="secTitle">Flagship product</div>
+      <div class="secHead">SecPortal — centralize security operations with clarity and control.</div>
+      <p class="lead" style="margin-bottom:12px;">
+        SecPortal reduces operational friction by bringing security workflows into a unified, trackable system —
+        improving visibility, coordination, and audit readiness.
+      </p>
+
+      <div class="grid">
+        <div class="mini">
+          <h3>Centralized workflows</h3>
+          <p>Replace scattered docs and ad-hoc processes with structured execution.</p>
+        </div>
+        <div class="mini">
+          <h3>Operational visibility</h3>
+          <p>Know what’s happening, what’s blocked, and what needs attention — without guesswork.</p>
+        </div>
+        <div class="mini">
+          <h3>Audit readiness</h3>
+          <p>Maintain evidence and traceability so compliance stops being a fire drill.</p>
+        </div>
+      </div>
+
+      <div class="ctaRow" style="margin-top:16px;">
+        <a class="btn primary" href="https://secportal.io" target="_blank" rel="noopener">Visit SecPortal</a>
+        <a class="btn" href="#contact">Request a demo</a>
+      </div>
+    </section>
+
+    <section class="card" id="contact" style="margin-top:18px;">
+      <div class="secTitle">Contact</div>
+      <div class="secHead">Let’s talk.</div>
+      <p class="lead" style="margin-bottom:12px;">
+        For partnerships, product inquiries, or SecPortal demos, reach out and we’ll respond promptly.
+      </p>
+
+      <!-- Replace these placeholders -->
+      <p style="margin:0; color: var(--muted);">
+        Email: <a class="mono" href="mailto:hello@xygenhq.com">hello@xygenhq.com</a><br/>
+        LinkedIn: <span class="mono">https://www.linkedin.com/company/your-page</span>
+      </p>
+    </section>
+
+    <footer class="footer" aria-label="Footer">
+      <div>© <span id="y"></span> Xygen. All rights reserved.</div>
+      <div class="mono">www.xygenhq.com</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
