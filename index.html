@@ -34,7 +34,6 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -46,7 +45,6 @@
       overflow-x: hidden;
     }
 
-    /* ── Ambient background ── */
     body::before {
       content: '';
       position: fixed;
@@ -74,7 +72,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 12px 20px;
+      padding: 10px 20px;
       background: rgba(10,14,19,.7);
       border: 1px solid var(--line);
       border-radius: 999px;
@@ -91,12 +89,12 @@
       align-items: center;
       gap: 10px;
       font-weight: 800;
-      font-size: 15px;
+      font-size: 16px;
       letter-spacing: .3px;
     }
 
     .brand img {
-      height: 26px;
+      height: 36px;
       width: auto;
       display: block;
     }
@@ -235,7 +233,7 @@
       box-shadow: 0 8px 32px rgba(255,122,26,.15);
     }
 
-    /* ── Stats bar ── */
+    /* ── Stats ── */
     .stats {
       display: flex;
       justify-content: center;
@@ -267,10 +265,8 @@
       margin-top: 2px;
     }
 
-    /* ── Section styling ── */
-    .section {
-      margin-bottom: 64px;
-    }
+    /* ── Section ── */
+    .section { margin-bottom: 64px; }
 
     .section-label {
       font-size: 11px;
@@ -297,7 +293,7 @@
       margin-bottom: 32px;
     }
 
-    /* ── What We Do grid ── */
+    /* ── What We Do ── */
     .wwd-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -334,19 +330,10 @@
     .wwd-icon.green { background: var(--accent2-glow); color: var(--accent2); }
     .wwd-icon.blue { background: rgba(122,168,255,.1); color: #7aa8ff; }
 
-    .wwd-card h3 {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
+    .wwd-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .wwd-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
-    .wwd-card p {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* ── SecPortal product section ── */
+    /* ── SecPortal ── */
     .product-section {
       background: var(--surface);
       border: 1px solid var(--line);
@@ -360,10 +347,8 @@
     .product-section::before {
       content: '';
       position: absolute;
-      top: 0;
-      right: 0;
-      width: 400px;
-      height: 400px;
+      top: 0; right: 0;
+      width: 400px; height: 400px;
       background: radial-gradient(circle, rgba(16,185,129,.06), transparent 70%);
       pointer-events: none;
     }
@@ -432,8 +417,7 @@
     }
 
     .feature-icon {
-      width: 36px;
-      height: 36px;
+      width: 36px; height: 36px;
       border-radius: 8px;
       background: var(--accent2-glow);
       display: flex;
@@ -444,18 +428,8 @@
     }
 
     .feature-icon svg { width: 18px; height: 18px; }
-
-    .feature h4 {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .feature p {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.5;
-    }
+    .feature h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .feature p { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
     .engagement-types {
       display: flex;
@@ -516,8 +490,7 @@
     }
 
     .contact-icon {
-      width: 42px;
-      height: 42px;
+      width: 42px; height: 42px;
       border-radius: 10px;
       background: var(--accent-glow);
       display: flex;
@@ -528,19 +501,8 @@
     }
 
     .contact-icon svg { width: 18px; height: 18px; }
-
-    .contact-card .label {
-      font-size: 12px;
-      color: var(--dim);
-      font-weight: 500;
-      margin-bottom: 2px;
-    }
-
-    .contact-card .value {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text);
-    }
+    .contact-card .label { font-size: 12px; color: var(--dim); font-weight: 500; margin-bottom: 2px; }
+    .contact-card .value { font-size: 14px; font-weight: 600; color: var(--text); }
 
     /* ── Footer ── */
     .footer {
@@ -554,16 +516,9 @@
       gap: 12px;
     }
 
-    .footer-left {
-      font-size: 13px;
-      color: var(--dim);
-    }
+    .footer-left { font-size: 13px; color: var(--dim); }
 
-    .footer-right {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
+    .footer-right { display: flex; gap: 20px; align-items: center; }
 
     .footer-right a {
       font-size: 13px;
@@ -589,14 +544,15 @@
     @media (max-width: 768px) {
       .wrap { padding: 14px 16px 0; }
       .nav { padding: 10px 16px; }
+      .brand img { height: 30px; }
+      .brand span { font-size: 14px; }
       .navlinks { display: none; }
       .navlinks.open {
         display: flex;
         flex-direction: column;
         position: absolute;
         top: calc(100% + 10px);
-        right: 0;
-        left: 0;
+        right: 0; left: 0;
         background: rgba(10,14,19,.95);
         border: 1px solid var(--line);
         border-radius: var(--radius);
@@ -620,10 +576,11 @@
 <body>
   <div class="wrap">
 
-    <!-- ── Nav ── -->
+    <!-- Nav -->
     <header class="nav" aria-label="Primary navigation">
       <a href="#" class="brand">
         <img src="assets/xygen_logo.png" alt="Xygen" />
+        <span>Xygen</span>
       </a>
       <button class="menu-toggle" onclick="document.querySelector('.navlinks').classList.toggle('open')" aria-label="Menu">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -636,7 +593,7 @@
       </nav>
     </header>
 
-    <!-- ── Hero ── -->
+    <!-- Hero -->
     <section class="hero fade-up" aria-label="Hero">
       <div class="hero-badge"><span class="dot"></span> Building in public</div>
       <h1>We build digital products<br/>that <span class="accent">ship fast</span> and<br/>last longer.</h1>
@@ -656,7 +613,7 @@
       </div>
     </section>
 
-    <!-- ── Stats ── -->
+    <!-- Stats -->
     <div class="stats fade-up">
       <div class="stat">
         <div class="stat-value orange">1</div>
@@ -676,7 +633,7 @@
       </div>
     </div>
 
-    <!-- ── Approach ── -->
+    <!-- Approach -->
     <section class="section fade-up" id="approach">
       <div class="section-label">Our approach</div>
       <div class="section-title">Strategy, engineering, and craft.</div>
@@ -709,7 +666,7 @@
       </div>
     </section>
 
-    <!-- ── SecPortal ── -->
+    <!-- SecPortal -->
     <section class="product-section fade-up" id="secportal">
       <div class="product-header">
         <div class="product-header-text">
@@ -724,9 +681,7 @@
           </p>
         </div>
         <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:flex-start; padding-top:28px;">
-          <a class="btn btn-primary" href="https://secportal.io" target="_blank" rel="noopener">
-            Launch SecPortal &rarr;
-          </a>
+          <a class="btn btn-primary" href="https://secportal.io" target="_blank" rel="noopener">Launch SecPortal &rarr;</a>
           <a class="btn" href="#contact">Request a demo</a>
         </div>
       </div>
@@ -801,7 +756,7 @@
       </div>
     </section>
 
-    <!-- ── Contact ── -->
+    <!-- Contact -->
     <section class="section fade-up" id="contact">
       <div class="section-label">Contact</div>
       <div class="section-title">Let's talk.</div>
@@ -830,7 +785,7 @@
       </div>
     </section>
 
-    <!-- ── Footer ── -->
+    <!-- Footer -->
     <footer class="footer" aria-label="Footer">
       <div class="footer-left">&copy; <span id="y"></span> Xygen. All rights reserved.</div>
       <div class="footer-right">
@@ -844,14 +799,10 @@
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Fade-in on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
     }, { threshold: 0.15 });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-    // Close mobile nav on link click
     document.querySelectorAll('.navlinks a').forEach(a => {
       a.addEventListener('click', () => document.querySelector('.navlinks').classList.remove('open'));
     });
